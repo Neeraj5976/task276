@@ -1,0 +1,99 @@
+/* Import Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 224 71.4% 4.1%; /* Dark gray */
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 220 90% 50%; /* Modern blue */
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220 9.1% 43.1%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.8% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220 9.1% 43.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 90% 50%; /* Modern blue for ring */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%; /* Dark gray */
+    --foreground: 210 20% 98%; /* Light gray */
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 20% 98%; /* Light blue for dark mode primary text on primary bg if needed, or adjust primary bg for dark mode */
+    /* Let's keep primary interactive color same, just foreground on it changes */
+    /* --primary: 220 90% 50%; */ /* Modern blue (same as light) */
+    /* --primary-foreground: 210 20% 98%; */ /* Light text on primary */
+    /* Prompt: Primary: Light blue (--primary: 210 20% 98%) - this means the primary color itself changes */
+     --primary: 210 20% 90%; /* Lighter blue for primary actions in dark mode */
+     --primary-foreground: 224 71.4% 4.1%; /* Dark text on light blue primary */
+
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.4 10.8% 62.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 210 20% 90%; /* Lighter blue for ring in dark mode */
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+  }
+}
+
+/* Custom scrollbar for webkit browsers (optional, for aesthetics) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--secondary-foreground));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
